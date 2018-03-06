@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>oMachine.tech | Oracles </title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+		<!-- my-->
+		<link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+		
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Oracles</h1>
+					<h3>A blockchain-based definition</h3>
+					<p>
+						<small>presentation by <a href="http://chrisstov.com/">Hristo Hristov</a></small>
+					</p>
+				</section>
+				
+				<section>
+					<h2>Outline</h2>
+					<p>
+						<ol>
+							<li class="fragment">Definition</li>
+							<li class="fragment">Theory</li>
+							<li class="fragment">Blockchain oracles</li>
+							<li class="fragment">BCDB</li>
+							<li class="fragment">Implementations</li>
+						</ol>
+					</p>
+				</section>
+
+				<section>
+					<h2>1. Definition</h2>
+					<p>
+						<ul>
+							<li class="fragment">Deep semantics and context usages</li>
+							<li class="fragment">Someone / <span class="fragment highlight-green">something</span>, who / which is knowledgeable in a certain area</li>
+							<li class="fragment">Defining what an oracle is in a more technical context:
+								<blockquote>"a non-animated unit of information, a type of data source, residing on a public ledger – the Blockchain."</blockquote>
+							 </li>
+						</ul>
+					</p>
+				</section>			
+				<section>
+					<section>
+						<h2>2. Theory</h2>
+						<p>Need to understand what an oracle is in a more computational and non-human context</p>
+						<br>
+						<a href="#" class="navigate-down">
+							<img width="130" height="190" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+						</a>
+					</section>
+					<section>
+						<h2>2.1. First usage</h2>
+						<p>
+							<ul>
+								<li class="fragment">Alan Turing’s dissertation, where an oracle is described as:
+									 <blockquote>"...some unspecifed means of solving number theoretic problems; a kind of oracle as it were."</blockquote>
+								</li>
+							</ul>
+						</p>
+					</section>
+					<section>
+						<h2>2.2. First usage - contrast</h2>
+						<p>
+							<ul>
+								<li class="fragment">Base oracles and the omachines are contrasted to the Turing machine</li>
+								<li class="fragment">The former may solve a problem that is not necessarily of computational in nature, while the latter can only solve computational problems</li>
+								<li class="fragment">The concept of the Turing machine has served as the basis for modern-day computing hardware</li>
+							</ul>
+						</p>
+					</section>
+					<section>
+						<h2>2.3. The Concept</h2>
+						<p>
+							<ul>
+								<li class="fragment">Having introduced the concept of oracles, the topic was left untouched to a large extent</li>
+								<li class="fragment">Turing not publishing more information on his oracle concept because he participated in the war effort after 1939</li>
+								<li class="fragment">Now we are revisiting the oracle concept, by following Turing’s footsteps</li>
+							</ul>
+						</p>
+					</section>
+					<section>
+						<h2>2.4. Oracle - a dataset?</h2>
+						<p>
+							<ul>
+								<li class="fragment">The oracle (machine) would be a unit containing certain data – a dataset</li>
+								<li class="fragment">The oracle’s dataset would enable it to supply meaningful answers to various questions</li>
+							</ul>
+						</p>
+					</section>
+					<section>
+							<h2>2.5. Ask the oracle?</h2>
+							<p>
+								<ul>
+									<li class="fragment">Users would be able to query, or rather ask, the oracle what would be P(A), where A is an arbitrary event</li>
+									<li class="fragment">The inherent advantages of the blockchain technology make oracles tamper-proof and immutable, <em>unless</em> the blockchain is forked or the same oracle is inserted on another blockchain.</li>
+								</ul>
+							</p>
+					</section>
+					<section>
+							<h2>2.6. Deep into the rabbit hole</h2>
+							<p>
+								<ul>
+									<li class="fragment">What is the behavior of oracles with respect to themselves?</li>
+									<li class="fragment">The philosophical question is if we can question a certain oracle about itself</li>
+								</ul>
+					</section>
+					<section>
+							<h2>2.7. Oracle type theory</h2>
+							<p>
+								<ul>
+									<li class="fragment">An oracle being asked questions about itself would be a type of recursion that would require the oracle to analyze how true its answers have been so far.</li>
+									<li class="fragment">Type theory: the description cannot be applied to itself.</li>
+									<li class="fragment"><q>all rules have exceptions</q> cannot be applied to itself, by default. </li>
+								</ul>
+							</p>
+							<a href="#/2">
+								<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="transform: rotate(180deg); -webkit-transform: rotate(180deg);">
+							</a>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>3. Blockchain oracles</h2>
+						<p>
+							<ul>
+								<li class="fragment">inherenet limitations for blockchain data storage</li>
+								<li class="fragment">smart contracts may need external data</li>
+								<li class="fragment">query and results are stored on the blochain, data is not</li>
+							</ul>
+						</p>			
+						<a href="#" class="navigate-down">
+								<img width="130" height="190" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+						</a>
+					</section>
+					<section>
+						<h2>3.1. Definition</h2>
+						<p>
+							<ul>
+								<li>In the context of blockchain an oracle is an entity that finds, stores and submits real-word data to a smart contract on a blockchain.</li>
+							</ul>
+							</p>
+					</section>
+					<section>
+						<h2>3.2. Types of Oracles</h2>
+						<table>
+							<thead>
+								<tr>
+									<th>Category</th>
+									<th colspan="2" id="tableHeader">Types</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Source</td>
+									<td><span class="fragment highlight-green">software</span></td>
+									<td>hardware</td>
+								</tr>
+								<tr>
+									<td>Feed direction</td>
+									<td><span class="fragment highlight-green">inbound</span></td>
+									<td>outbound</td>
+								</tr>
+								<tr>
+									<td>Consensus</td>
+									<td>centralized</td>
+									<td><span class="fragment highlight-green">decentralized</span></td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+					<section>
+						<h2>3.3. A Software, inbound, decentralized oracle</h2>
+						<p>
+							<ul>
+								<li class="fragment">A dataset</li>
+								<li class="fragment">Data is supplied to smart contracts</li>
+								<li class="fragment">A number of sources produce datasets which are combined</li>
+								<li class="fragment">Random oracle feed</li>
+							</ul>
+						</p>
+					</section>
+					<section>
+						<h2>3.4. Single point / value of failure</h2>
+						<p>
+							<ul>
+								<li class="fragment">The business logic depends on this value / piece of data</li>
+								<li class="fragment">This fact contradicts the whole decentralized, tamper-proof concept of the blockchain</li>
+								<li class="fragment">Data must come with guaranteed and verifiable authenticity</li>
+							</ul>
+						</p>
+					</section>
+					<section>
+						<h2>3.5. Solution</h2>
+						<p>
+							<ul>
+								<li class="fragment">Data attestation</li>
+								<li class="fragment">Autheticated data feed</li>
+								<li class="fragment">Sidechain?</li>
+							</ul>
+						</p>
+					</section>
+					<section>
+						<h2><a href="http://www.town-crier.org/">3.6. TownCrier</a></h2>
+						<p>
+							<ul>
+								<li class="fragment">Dedicated smart contract</li>
+								<li class="fragment">Interfaces a secure execution environment</li>
+								<li class="fragment">API call</li>
+							</ul>
+						</p>
+						<p class="fragment">
+							<span id="tcSchema">🗎 
+								<span class="fragment highlight-green">↔</span> 
+								&lt;TC&gt; 
+								<span class="fragment highlight-green">↔</span> 
+								Trusted Data
+							</span>
+						</p>
+					</section>
+				</section>
+				<section data-transition="slide" data-background="#" data-background-transition="zoom">
+					<h2>4. Blockchain Database</h2>
+					<p>
+						<ul>
+							<li>Data-to-blockchain interface </li>
+							<li>Secure off-chain sources</li>
+							<li>Enable programmatic (smart) data access</li>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<h2>5. Implementations - E1</h2>
+					<br>
+					<p>
+					<a href="https://create.smartcontract.com/sibos17">
+						SWIFT Smart Oracle
+					</a>
+					<ul>
+						<li class="fragment">Link bank data to blockchain</li>
+						<li class="fragment">Streamline payment</li>
+						<li class="fragment">Effectively turning banks into on-chain players <strong>straightaway</strong></li>
+					</ul>
+					</p>
+				</section>
+<!--				<section>
+					<h2>Speaker View</h2>
+					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
+					<p>Press the <em>S</em> key to try it out.</p>
+
+					<aside class="notes">
+						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+					</aside>
+				</section>
+
+				<section>
+					<h2>Export to PDF</h2>
+					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
+					<iframe data-src="https://www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+				</section>
+
+				<section>
+					<h2>Global State</h2>
+					<p>
+						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
+						will be added as a class to the document element when the slide is open. This lets you
+						apply broader style changes, like switching the page background.
+					</p>
+				</section>
+
+				<section data-state="customevent">
+					<h2>State Events</h2>
+					<p>
+						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
+					</p>
+					<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
+Reveal.addEventListener( 'customevent', function() {
+	console.log( '"customevent" has fired' );
+} );
+					</code></pre>
+				</section>
+			-->
+				<section>
+					<h2>Conclusion</h2>
+					<br>
+					<p>
+						<blockquote>
+						"The future is already here – it's just not evenly distributed."						
+							<br>				
+						</blockquote>
+					</p>
+					<p id="end">William Gibson</p>
+					<br>
+					<br>
+					<h3 class="fragment">END</h3>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				transition: 'slide', 
+				backgroundTransition: 'slide',
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/search/search.js', async: true },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

@@ -1,6 +1,6 @@
-### Oracles: a blockchain-based definition
+## Oracles: a blockchain-based definition
 
-##### Dev.bg presentation 22.02.2018
+### Dev.bg presentation 22.02.2018
 
 [Link to event](https://www.facebook.com/events/531026823929803/)
 

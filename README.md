@@ -1,6 +1,6 @@
 ## Oracles: a blockchain-based definition
 
-### Dev.bg presentation 22.02.2018
+### Dev.bg presentation 22.02.2018, Sofia, Bulgaria
 
 + [Presentation](http://omachine.tech/p)
 
